@@ -1,0 +1,110 @@
+Anotações da Aula de Windows Server
+
+27 de Janeiro de 2022 ... Bora implementar Segurança no Windows Server
+Cada aula conta na avaliação individual do aluno, quando você não entrega 
+a atividade proposta na aula, vai influenciando na menção Final da UC 
+Lembrando que tudo fica registrado no Teams.
+Via VPN
+Servidor de Arquivos --- Todos Usuários da REDE vão salvar seus arquivos 
+centralizados no HD Servidor
+E se esse HD parar de Funcionar??
+RAID 1 - Espelhamento
+
+🌟 VirtualBox Habilitar o Recurso de Virtualização para criar Máquinas 
+Virtuais 64 bits - ERRO VM x64:
+    https://www.youtube.com/watch?v=886cH0E-T7I
+
+Intel VT
+Intel VT --- Desable (Muda para Enable) e salva f10
+
+🌟 VirtualBOX - Solução do ERRO NÃO HABILITA RECURSO X64 e Múltiplos Núcleos 
+no Windows
+    https://www.youtube.com/watch?v=rtF8nooLruY
+
+1. Logar no computador com um conta com direitos administrativos; 
+2. Rodar o 
+comando: CMD em modo: Como Administrador; 
+3. Desabilitar o Hyper-Visor, executando o comando: bcdedit /set hypervisorlaunchtype off 
+4. Consultar se está desabilitado, executando o comando: bcdedit, verificar a linha: hypervisorlaunchtype 
+5. Reinicializar o computador. 
+6. Se logar novamente, fazer os teste de criação/modificação das máquinas virtuais.
+
+100% de Segurança NÃO existe ...
+
+Imagem: Windows server img2 (1)
+Imagem: Windows server img2 (2) 
+Imagem: Windows server img2 (3) 
+
+Inicializar Serviço ou se for um Alerta (Botão Ocultar Alertas) VAI FICAR VERDE ..
+RAID NÃO substitui Backup !!!
+
+Imagem: Windows server img2 (4)
+
+Windows X - Gerenciamento de Disco
+
+Imagem:Windows server img2 (5)
+Imagem: Windows server img2 (6)
+MBR até 2TB
+GPT pode ser com mais de 2TB
+
+Imagem: Windows server img2 (7)
+RAID1 - Espelhamento eu tenho redundância
+Imagem: Windows server img2 (8)
+Volume espelhado
+Imagem: Windows server img2 (10)
+Imagem: Windows server img2 (11)
+Imagem: Windows server img2 (12)
+Imagem: Windows server img2 (13)
+Imagem: Windows server img2 (14)
+Imagem: Windows server img2 (15)
+2008 - Converter em Disco Dinâmico ANTES ...
+Imagem: Windows server img2 (16)
+Imagem: Windows server img2 (17)
+L: (Tudo é duplicado nos 2 discos) 
+1.O) que acontece quando queimar 1 HD ??? 
+Os dados vão estar disponíveis para os usuários ???
+ZABBIX Monitoramento do meu Servidor ...
+Imagem: Windows server img2 (18)
+Imagem: Windows server img2 (19)
+Remover Espelho
+Imagem: Windows server img2 (20)
+Imagem: Windows server img2 (21)
+Colocar um HD NOVO no Servidor e vou espelhar Novamente ...
+o HD  espelhado pode ser da mesma capacidade ou maior.
+nunca pode ser menor!!
+Adicionar Espelho
+Imagem: Windows server img2 (22)
+Imagem: Windows server img2 (23)
+Imagem: Windows server img2 (24)
+Imagem: Windows server img2 (25)
+Imagem: Windows server img2 (26)
+1HD 50 --> 100 GB (Sobrou 50GB) --> 1 HD 50GB
+RAID 5 - Paridade ...
+Tudo ZERO e UM ...
+0001110001010101000011100001010010
+Paridade ---- PAR
+00 - 0
+01 -1
+11 - 0
+3 discos --- 1 queimar ... monto ele com os outros 2 ...
+Imagem: Windows server img2 (27)
+Novo volume RAID 5
+Imagem: Windows server img2 (28)
+Imagem: Windows server img2 (29)
+Imagem: Windows server img2 (30)
+Imagem: Windows server img2 (31) 
+Imagem Windows server img2 (32)
+Imagem Windows server img2 (33)
+1 Criar um RAID 1
+2 Colocar DADOS no L:
+3 Simular uma falha em 1 dos Discos
+4 Verificar a disponibilidade dos Dados
+5 Colocar um HD NOVO (Igual ou MAIOR) e Refazer o espelho
+...
+6 - Criar um RAID 5 nos outros 3 HDs que sobraram e testar ...
+Postar o PRINT aqui no CHAT até as 17:30 ou na próxima aula até as 14:00
+
+🔴 Curso Grátis Administrando Windows Server 2016 | Criando Espelhamento de Discos - RAID 1
+    https://www.youtube.com/watch?v=9SJ9NjZrnAE
+🔴 Curso Grátis Administrando Windows Server 2016 | Como Recuperar RAID 1 no caso de falha em um HD
+    https://www.youtube.com/watch?v=UimQBG2MHbg
