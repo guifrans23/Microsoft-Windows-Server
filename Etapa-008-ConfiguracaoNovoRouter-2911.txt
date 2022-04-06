@@ -1,0 +1,36 @@
+enable
+	configure terminal
+		hostname rt-02
+		service password-encryption
+		no ip domain-lookup
+		banner motd #AVISO: acesso autorizado somente a funcionarios#
+		enable secret 123@senac
+		username senac secret 123@senac
+		username tatuape password 123@senac
+		ip domain-name senac.tat
+		crypto key generate rsa general-keys modulus 1024
+		ip ssh version 2
+		ip ssh time-out 60
+		ip ssh authentication-retries 2
+		line console 0
+			login local
+			password 123@senac
+			logging synchronous
+			exec-timeout 5 30
+			exit
+		line vty 0 4
+			login local
+			password 123@senac
+			logging synchronous
+			exec-timeout 5 30
+			transport input all
+			exit
+		interface gigabitEthernet 0/0
+			description Interface de Gateway da Rede LAN
+			ip address 192.168.1.254 255.255.255.0
+			no shutdown
+			end
+	write
+	
+!Visualizando as configurações da memória RAM
+show running-config
